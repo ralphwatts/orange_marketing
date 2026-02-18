@@ -75,19 +75,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">250+</div>
-              <div className="text-gray-400">Projects Delivered</div>
+              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">32%</div>
+              <div className="text-gray-400">Avg. Client Revenue Growth</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">98%</div>
-              <div className="text-gray-400">Client Satisfaction</div>
+              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">40%
+              </div>
+              <div className="text-gray-400">Avg. Time Saved Through Automation</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">50+</div>
-              <div className="text-gray-400">Team Members</div>
+              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">94%
+              </div>
+              <div className="text-gray-400">Client Retention Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">11Y</div>
+              <div className="text-5xl md:text-6xl font-bold text-[#ff6b35] mb-2">11Y+</div>
               <div className="text-gray-400">Industry Experience</div>
             </div>
           </div>
