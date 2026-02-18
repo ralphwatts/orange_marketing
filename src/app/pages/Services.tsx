@@ -1,5 +1,7 @@
+import { Link } from 'react-router';
 import { Code2, Zap, BarChart3, MessageSquare, Check, Clock, Target, Users, TrendingUp } from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/ImageWithFallback';
+import { SEO } from '../components/SEO';
 
 export default function Services() {
   const services = [
@@ -27,6 +29,17 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-[#0a0a1e] text-white">
+      <SEO
+        title="Services"
+        description="Custom systems for business growth: web development, AI & automation, analytics, and strategy. We help businesses automate operations and convert more leads. Palm Beach County, FL."
+        path="/services"
+        getSchema={(baseUrl) => ({
+          '@type': 'WebPage',
+          name: 'Services | Orange Digital',
+          description: 'Custom systems for business growth: web development, AI & automation, analytics, and strategy.',
+          url: baseUrl + '/services',
+        })}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#1a1535] to-[#0a0a1e]" />
@@ -40,15 +53,17 @@ export default function Services() {
               Less Busywork.
             </h1>
             <p className="text-lg text-gray-400 mb-8 max-w-xl">
-              We help local businesses automate their operations and grow faster with custom systems that actually work.
+              We help businesses automate their operations and grow faster with custom systems that actually work.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold">
-                Get Your Free Strategy Call
-              </button>
-              <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold">
+              <Link to="/contact">
+                <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold cursor-pointer">
+                  Get Your Free Strategy Call
+                </button>
+              </Link>
+              {/* <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold cursor-pointer">
                 See How It Works
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="relative">
@@ -80,7 +95,7 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#1a1535] to-[#0a0a1e]" />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Most Local Businesses Are Held<br />Back by Their Systems
+            Most Small Businesses Are Held<br />Back by Their Systems
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-[#1a1a2e] p-8 rounded-xl border border-white/10">
@@ -214,7 +229,7 @@ export default function Services() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1758411898021-ef0dadaaa295?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzcxMzM5NzI1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/images/blake-wisz-GFrBMipOd_E-unsplash.jpg"
                 alt="AI Dashboard" 
                 className="rounded-2xl shadow-2xl w-full ring-1 ring-white/10"
               />
@@ -334,7 +349,7 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#1a1535] to-[#0a0a1e]" />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-16">
-            Trusted by Local Business Owners
+            Trusted by Business Owners
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#1a1a2e] rounded-xl p-8 border border-white/10">
@@ -413,12 +428,14 @@ export default function Services() {
               Book a free strategy call and we'll show you exactly how to build a system that grows your business on autopilot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg">
-                Book Your Free Call
-              </button>
-              <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold text-lg">
+              <Link to="/contact">
+                <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg cursor-pointer">
+                  Book Your Free Call
+                </button>
+              </Link>
+              {/* <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold text-lg cursor-pointer">
                 See Case Studies
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

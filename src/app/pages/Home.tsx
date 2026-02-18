@@ -1,9 +1,34 @@
+import { Link } from 'react-router';
 import { FloatingIcons } from '../components/FloatingIcons';
-import { ChevronDown } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Orange Digital | Digital Innovation & Automation"
+        description="We help local businesses grow with websites, automations, and AI-driven systems. Based in Palm Beach County, FL. Digital innovation and automation for smarter operations and simpler sales."
+        path="/"
+        getSchema={(baseUrl) => [
+          {
+            '@type': 'Organization',
+            name: 'Orange Digital',
+            url: baseUrl,
+            areaServed: { '@type': 'State', name: 'Florida' },
+          },
+          {
+            '@type': 'WebSite',
+            name: 'Orange Digital',
+            url: baseUrl,
+          },
+          {
+            '@type': 'WebPage',
+            name: 'Orange Digital | Digital Innovation & Automation',
+            description: 'We help local businesses grow with websites, automations, and AI-driven systems. Palm Beach County, FL.',
+            url: baseUrl + '/',
+          },
+        ]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#1a1535] to-[#0a0a1e]" />
@@ -28,22 +53,20 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg">
-              Start Your Project
-            </button>
-            <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold text-lg">
+            <Link to="/contact">
+              <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg cursor-pointer">
+                Start Your Project
+              </button>
+            </Link>
+            {/* <button className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors font-semibold text-lg cursor-pointer">
               View Our Work
-            </button>
+            </button> */}
           </div>
 
           <div className="flex flex-col items-center gap-2 text-gray-500 mb-4">
-            <span className="text-sm">We help teams remotely and locally in <span className="text-[#ff6b35]">Palm Beach County, FL </span></span>
+            <span className="text-sm">We help teams remotely across the globe and locally in and around <span className="text-[#ff6b35]">Palm Beach County, FL </span></span>
           </div>
 
-          <div className="flex flex-col items-center gap-2 text-gray-500">
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="w-5 h-5 animate-bounce" />
-          </div>
         </div>
       </section>
 
@@ -83,9 +106,11 @@ export default function Home() {
           <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             Let's collaborate to bring your vision to life with innovative digital solutions.
           </p>
-          <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg">
-            Let's Talk
-          </button>
+          <Link to="/contact">
+            <button className="px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold text-lg cursor-pointer">
+              Let's Talk
+            </button>
+          </Link>
         </div>
       </section>
     </>

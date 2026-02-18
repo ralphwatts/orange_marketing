@@ -4,11 +4,35 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Rebuild design with logo</title>
+      <title>Orange Digital | Digital Innovation & Automation</title>
+      <!-- Favicons: add favicon.ico, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png to /public -->
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <meta name="description" content="We help local businesses grow with websites, automations, and AI-driven systems. Palm Beach County, FL." />
+      <!-- Critical CSS: prevents flash of white/unstyled content before app and Tailwind load -->
+      <style>
+        html, body { margin: 0; min-height: 100%; background: #0a0a1e; color: #fff; }
+        #root { min-height: 100vh; }
+      </style>
     </head>
 
     <body>
       <div id="root"></div>
+      <!-- Netlify form detection (hidden; React renders the real form) -->
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none;">
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="checkbox" name="services" value="AI Integration" />
+        <input type="checkbox" name="services" value="Web Development" />
+        <input type="checkbox" name="services" value="Web Design" />
+        <input type="checkbox" name="services" value="Lead Generation" />
+        <input type="checkbox" name="services" value="Internet Marketing" />
+        <input type="checkbox" name="services" value="Other" />
+        <input name="bot-field" />
+      </form>
       <script type="module" src="/src/main.tsx"></script>
     </body>
   </html>
