@@ -1,29 +1,18 @@
 import { Link } from 'react-router';
 import { SEO } from '../components/SEO';
 
-export default function Contact() {
-  const serviceOptions = [
-    'Web Development & Design',
-    'App Development',
-    'AI Integration & Automation',
-    'Internet Marketing',
-    'Analytics & Growth',
-    'Strategy & Consulting',
-    'Lead Generation',
-    'Other',
-  ];
-
+export default function FreeAudit() {
   return (
     <div className="min-h-screen bg-[#0a0a1e] text-white">
       <SEO
-        title="Contact"
-        description="Get in touch with Orange Digital. Tell us about your business and we'll get back to you soon. Palm Beach County, FL."
-        path="/contact"
+        title="Free Website & Lead Flow Audit | Orange Digital"
+        description="Get a free audit of your website and lead flow. Share your URL and we'll send a short report with 3–5 actionable improvements within 48 hours. Palm Beach County, FL."
+        path="/free-audit"
         getSchema={(baseUrl) => ({
           '@type': 'WebPage',
-          name: 'Contact | Orange Digital',
-          description: 'Get in touch with Orange Digital. Tell us about your business.',
-          url: baseUrl + '/contact',
+          name: 'Free Website & Lead Flow Audit | Orange Digital',
+          description: 'Share your website URL and we\'ll review it and send a short report with actionable improvements within 48 hours.',
+          url: baseUrl + '/free-audit',
         })}
       />
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -31,36 +20,35 @@ export default function Contact() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,107,53,0.12),transparent_50%)]" />
         <div className="relative z-10 max-w-xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
-            Get in <span className="text-[#ff6b35]">Touch</span>
+            Free <span className="text-[#ff6b35]">Website & Lead Flow</span> Audit
           </h1>
-          <p className="text-gray-400 mb-6">
-            Tell us about your business and we&apos;ll get back to you soon.
+          <p className="text-gray-400 mb-10">
+            Share your website URL and tell us where your leads come from. We&apos;ll review your site and, based on your answers, send you a short report with 3–5 actionable improvements within 48 hours.
           </p>
 
           <form
-            name="contact"
+            name="audit"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            action="/thank-you"
+            action="/thank-you-audit"
             className="space-y-6"
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="audit" />
 
-            {/* Honeypot - hidden from users, bots fill it */}
             <p className="absolute -left-[9999px] w-1 h-1 overflow-hidden" aria-hidden="true">
               <label>
-                Don't fill this out if you're human: <input name="bot-field" />
+                Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
               </label>
             </p>
 
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="audit-name" className="block text-sm font-medium text-gray-300 mb-2">
                 Name
               </label>
               <input
                 type="text"
-                id="name"
+                id="audit-name"
                 name="name"
                 required
                 className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
@@ -69,12 +57,12 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="audit-email" className="block text-sm font-medium text-gray-300 mb-2">
                 Email
               </label>
               <input
                 type="email"
-                id="email"
+                id="audit-email"
                 name="email"
                 required
                 className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
@@ -83,52 +71,49 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
-                placeholder="(555) 000-0000"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-              Company Name
+              <label htmlFor="audit-company" className="block text-sm font-medium text-gray-300 mb-2">
+                Company (optional)
               </label>
               <input
                 type="text"
-                id="company"
+                id="audit-company"
                 name="company"
-                required
                 className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
                 placeholder="Your company"
               />
             </div>
 
             <div>
-              <span className="block text-sm font-medium text-gray-300 mb-3">
-                Services interested in
-              </span>
-              <div className="grid grid-cols-2 gap-3">
-                {serviceOptions.map((value) => (
-                  <label
-                    key={value}
-                    className="flex items-center gap-3 cursor-pointer text-gray-400 hover:text-white transition-colors"
-                  >
-                    <input
-                      type="checkbox"
-                      name="services"
-                      value={value}
-                      className="w-4 h-4 rounded border-white/20 bg-[#1a1a2e] text-[#ff6b35] focus:ring-[#ff6b35] focus:ring-offset-0 focus:ring-2"
-                    />
-                    <span>{value}</span>
-                  </label>
-                ))}
-              </div>
+              <label htmlFor="audit-website" className="block text-sm font-medium text-gray-300 mb-2">
+                Website URL
+              </label>
+              <input
+                type="url"
+                id="audit-website"
+                name="website"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
+                placeholder="https://yourcompany.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="audit-lead-source" className="block text-sm font-medium text-gray-300 mb-2">
+                Where do most of your leads come from?
+              </label>
+              <select
+                id="audit-lead-source"
+                name="lead-source"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
+              >
+                <option value="">Select one</option>
+                <option value="Website form">Website form</option>
+                <option value="Google / Search">Google / Search</option>
+                <option value="Referrals">Referrals</option>
+                <option value="Social media">Social media</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
             <div>
@@ -136,7 +121,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full sm:w-auto px-8 py-4 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold cursor-pointer"
               >
-                Send
+                Get My Free Audit
               </button>
             </div>
           </form>

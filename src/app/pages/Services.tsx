@@ -7,23 +7,23 @@ export default function Services() {
   const services = [
     {
       icon: Code2,
-      title: 'Web Development',
-      description: 'Custom websites and web apps built for speed, clarity, and conversion.',
+      title: 'Websites & Funnels That Convert',
+      description: 'Sites and landing pages built to turn visitors into leads and buyers.',
     },
     {
       icon: Zap,
-      title: 'AI & Automation',
-      description: 'Workflows and tools that automate repetitive tasks and scale your operations.',
+      title: 'AI & Automation That Cuts Busywork',
+      description: 'Workflows and tools that automate follow-up and repetitive tasks so you scale without adding staff.',
     },
     {
       icon: BarChart3,
-      title: 'Analytics & Growth',
-      description: 'Data-driven insights and marketing systems that help you grow.',
+      title: 'Analytics & Growth Systems',
+      description: 'Data and marketing systems that show where growth comes from and how to get more of it.',
     },
     {
       icon: MessageSquare,
-      title: 'Strategy & Consulting',
-      description: 'Clear roadmaps and ongoing support so you stay ahead of the curve.',
+      title: 'Strategy & Roadmaps',
+      description: 'Clear plans and ongoing support so you know what to build next and stay ahead.',
     },
   ];
 
@@ -358,13 +358,14 @@ export default function Services() {
                   <span key={i} className="text-[#ff6b35]">★</span>
                 ))}
               </div>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-400 mb-3">
                 "This system completely transformed how we handle leads. We went from losing 60% of our inquiries to following up with 100% of them automatically."
               </p>
+              <p className="text-sm text-gray-500 mb-6">Result: 100% follow-up rate</p>
               <div className="flex items-center gap-3">
                 <ImageWithFallback 
                   src="https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMGJ1c2luZXNzJTIwcGVyc29ufGVufDF8fHx8MTc3MTMwNjE4Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Sarah M" 
+                  alt="Sarah M."
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div className="text-left">
@@ -379,9 +380,10 @@ export default function Services() {
                   <span key={i} className="text-[#ff6b35]">★</span>
                 ))}
               </div>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-400 mb-3">
                 "I got 15 hours back every week. The automated follow-ups alone have paid for the system 10x over. Best investment I've made."
               </p>
+              <p className="text-sm text-gray-500 mb-6">Result: 15 hrs/week saved</p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                   <span className="text-xl font-bold text-gray-400">JC</span>
@@ -398,9 +400,10 @@ export default function Services() {
                   <span key={i} className="text-[#ff6b35]">★</span>
                 ))}
               </div>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-400 mb-3">
                 "Finally, a team that understands small business. They built exactly what we needed - no bloat, no complexity. Just results."
               </p>
+              <p className="text-sm text-gray-500 mb-6">Result: Custom system delivered in 6 weeks</p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                   <span className="text-xl font-bold text-gray-400">MP</span>

@@ -9,8 +9,13 @@ import WebDevelopment from './pages/services/WebDevelopment';
 import AppDevelopment from './pages/services/AppDevelopment';
 import AIIntegration from './pages/services/AIIntegration';
 import InternetMarketing from './pages/services/InternetMarketing';
+import AnalyticsGrowth from './pages/services/AnalyticsGrowth';
+import StrategyConsulting from './pages/services/StrategyConsulting';
+import LeadGeneration from './pages/services/LeadGeneration';
 import LocationPage from './pages/locations/LocationPage';
 import ThankYou from './pages/ThankYou';
+import ThankYouAudit from './pages/ThankYouAudit';
+import FreeAudit from './pages/FreeAudit';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -83,6 +88,24 @@ export default function App() {
                     >
                       Internet Marketing
                     </Link>
+                    <Link
+                      to="/services/analytics-growth"
+                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
+                    >
+                      Analytics & Growth
+                    </Link>
+                    <Link
+                      to="/services/strategy-consulting"
+                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
+                    >
+                      Strategy & Consulting
+                    </Link>
+                    <Link
+                      to="/services/lead-generation"
+                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
+                    >
+                      Lead Generation
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -106,9 +129,14 @@ export default function App() {
             <Route path="/services/app-development" element={<AppDevelopment />} />
             <Route path="/services/ai-integration" element={<AIIntegration />} />
             <Route path="/services/internet-marketing" element={<InternetMarketing />} />
+            <Route path="/services/analytics-growth" element={<AnalyticsGrowth />} />
+            <Route path="/services/strategy-consulting" element={<StrategyConsulting />} />
+            <Route path="/services/lead-generation" element={<LeadGeneration />} />
             <Route path="/locations/:locationSlug" element={<LocationPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/free-audit" element={<FreeAudit />} />
+            <Route path="/thank-you-audit" element={<ThankYouAudit />} />
           </Routes>
         </main>
 
@@ -125,6 +153,9 @@ export default function App() {
 
               <div className="flex items-center gap-6 text-white text-sm">
               <nav className="flex flex-wrap items-center justify-center gap-6 text-sm">
+                <Link to="/free-audit" className="text-gray-400 hover:text-white transition-colors">
+                  Free Audit
+                </Link>
                 <Link to="/locations/palm-beach-county" className="text-gray-400 hover:text-white transition-colors">
                   Palm Beach County
                 </Link>
