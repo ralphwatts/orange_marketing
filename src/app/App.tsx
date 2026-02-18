@@ -10,6 +10,7 @@ import AppDevelopment from './pages/services/AppDevelopment';
 import AIIntegration from './pages/services/AIIntegration';
 import InternetMarketing from './pages/services/InternetMarketing';
 import LocationPage from './pages/locations/LocationPage';
+import ThankYou from './pages/ThankYou';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -107,6 +108,7 @@ export default function App() {
             <Route path="/services/internet-marketing" element={<InternetMarketing />} />
             <Route path="/locations/:locationSlug" element={<LocationPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </main>
 

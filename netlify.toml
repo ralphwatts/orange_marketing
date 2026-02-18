@@ -1,0 +1,6 @@
+# Form success redirect: contact form action is set to /thank-you in Contact.tsx.
+# Netlify Forms redirects to the form's action URL after a successful submit.
+
+[build]
+  publish = "dist"
+  command = "npm run build"

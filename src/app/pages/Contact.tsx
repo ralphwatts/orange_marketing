@@ -39,7 +39,7 @@ export default function Contact() {
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            action="/"
+            action="/thank-you"
             className="space-y-6"
           >
             <input type="hidden" name="form-name" value="contact" />
