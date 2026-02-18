@@ -42,7 +42,7 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             We help businesses <span className="text-[#ff6b35]">save time </span> 
             and <span className="text-[#ff6b35]">grow revenue</span> with websites and AI that run on autopilot.
           </h1>

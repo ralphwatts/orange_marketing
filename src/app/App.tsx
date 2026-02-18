@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router';
 import { Logo } from './components/Logo';
-import { MapPin, ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu } from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from './components/ui/sheet';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
@@ -15,7 +16,9 @@ import LeadGeneration from './pages/services/LeadGeneration';
 import LocationPage from './pages/locations/LocationPage';
 import ThankYou from './pages/ThankYou';
 import ThankYouAudit from './pages/ThankYouAudit';
+import NotFound from './pages/NotFound';
 import FreeAudit from './pages/FreeAudit';
+import AppPrivacyPage from './pages/apps/AppPrivacyPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,8 +28,20 @@ function ScrollToTop() {
   return null;
 }
 
+const serviceLinks = [
+  { to: '/services', label: 'Overview' },
+  { to: '/services/web-development', label: 'Web Development & Design' },
+  { to: '/services/app-development', label: 'App Development' },
+  { to: '/services/ai-integration', label: 'AI Integration & Automation' },
+  { to: '/services/internet-marketing', label: 'Internet Marketing' },
+  { to: '/services/analytics-growth', label: 'Analytics & Growth' },
+  { to: '/services/strategy-consulting', label: 'Strategy & Consulting' },
+  { to: '/services/lead-generation', label: 'Lead Generation' },
+];
+
 export default function App() {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -62,7 +77,7 @@ export default function App() {
                       to="/services"
                       className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
                     >
-                      All Services
+                      Overview
                     </Link>
                     <Link
                       to="/services/web-development"
@@ -113,13 +128,55 @@ export default function App() {
                 Contact
               </Link>
             </nav>
-            <Link to="/contact" className="text-white hover:text-white transition-colors">
-              <button className="px-6 py-2.5 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold cursor-pointer">
-                Get Started
+            <div className="flex items-center gap-3">
+              <Link to="/contact" className="hidden md:inline-block text-white hover:text-white transition-colors">
+                <button className="px-6 py-2.5 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold cursor-pointer">
+                  Get Started
+                </button>
+              </Link>
+              <button
+                type="button"
+                className="md:hidden p-2 text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open menu"
+                aria-expanded={mobileMenuOpen}
+              >
+                <Menu className="w-6 h-6" />
               </button>
-            </Link>
+            </div>
           </div>
         </header>
+
+        {/* Mobile menu */}
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetContent side="right" className="w-[min(320px,85vw)] border-white/10 bg-[#0a0a1e] p-0 [&_[data-slot=sheet-close]]:text-white [&_[data-slot=sheet-close]]:hover:opacity-100">
+            <SheetHeader className="border-b border-white/10 px-6 py-4 text-left">
+              <SheetTitle className="text-white font-bold">Menu</SheetTitle>
+            </SheetHeader>
+            <nav className="flex flex-col py-4 overflow-y-auto">
+              <div className="px-4 py-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 px-2">Services</span>
+                {serviceLinks.map(({ to, label }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="block px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-lg transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <div className="px-6 pt-4">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full py-3 bg-[#ff6b35] text-white rounded-lg hover:bg-[#ff5520] transition-colors font-semibold cursor-pointer">
+                    Get Started
+                  </button>
+                </Link>
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
 
         <main>
           <Routes>
@@ -137,6 +194,8 @@ export default function App() {
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/thank-you-audit" element={<ThankYouAudit />} />
+            <Route path="/apps/:appName" element={<AppPrivacyPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
