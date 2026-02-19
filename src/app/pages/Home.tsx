@@ -132,7 +132,7 @@ export default function Home() {
             <p className="text-gray-300 mb-6">
               We built an automated lead capture and follow-up system.
             </p>
-            <div className="flex flex-wrap gap-6 text-center">
+            <div className="flex flex-wrap gap-6 sm:text-center">
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-[#ff6b35]">60% → 100%</div>
                 <div className="text-sm text-gray-500">Follow-up rate</div>
