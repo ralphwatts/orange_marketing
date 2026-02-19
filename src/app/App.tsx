@@ -19,6 +19,7 @@ import ThankYouAudit from './pages/ThankYouAudit';
 import NotFound from './pages/NotFound';
 import FreeAudit from './pages/FreeAudit';
 import AppPrivacyPage from './pages/apps/AppPrivacyPage';
+import AITraining from './pages/AITraining';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ const serviceLinks = [
   { to: '/services/web-development', label: 'Web Development & Design' },
   { to: '/services/app-development', label: 'App Development' },
   { to: '/services/ai-integration', label: 'AI Integration & Automation' },
+  { to: '/ai-training', label: 'AI Training' },
   { to: '/services/internet-marketing', label: 'Internet Marketing' },
   { to: '/services/analytics-growth', label: 'Analytics & Growth' },
   { to: '/services/strategy-consulting', label: 'Strategy & Consulting' },
@@ -96,6 +98,12 @@ export default function App() {
                       className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
                     >
                       AI Integration & Automation
+                    </Link>
+                    <Link
+                      to="/ai-training"
+                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
+                    >
+                      AI Training
                     </Link>
                     <Link
                       to="/services/internet-marketing"
@@ -189,6 +197,7 @@ export default function App() {
             <Route path="/services/analytics-growth" element={<AnalyticsGrowth />} />
             <Route path="/services/strategy-consulting" element={<StrategyConsulting />} />
             <Route path="/services/lead-generation" element={<LeadGeneration />} />
+            <Route path="/ai-training" element={<AITraining />} />
             <Route path="/locations/:locationSlug" element={<LocationPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
@@ -214,6 +223,9 @@ export default function App() {
               <nav className="flex flex-wrap items-center justify-center gap-6 text-sm">
                 <Link to="/free-audit" className="text-gray-400 hover:text-white transition-colors">
                   Free Audit
+                </Link>
+                <Link to="/ai-training" className="text-gray-400 hover:text-white transition-colors">
+                  AI Training
                 </Link>
                 <Link to="/locations/palm-beach-county" className="text-gray-400 hover:text-white transition-colors">
                   Palm Beach County

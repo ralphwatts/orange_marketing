@@ -38,7 +38,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1a1a2e] border border-[#ff6b35]/50 rounded-full mb-8">
             <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-wider">
-              Palm Beach County
+              Digital Innovation
             </span>
           </div>
 
