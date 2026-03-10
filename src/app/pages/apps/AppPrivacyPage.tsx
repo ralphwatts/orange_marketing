@@ -1,4 +1,5 @@
 import { Link, useParams, useLocation } from 'react-router';
+import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -15,7 +16,24 @@ const POLICIES: Record<string, { title: string; content: string }> = {
 
 export default function AppPrivacyPage() {
   const { appName } = useParams<{ appName: string }>();
-  const policy = appName ? POLICIES[appName] : null;
+  const { pathname, hash } = useLocation();
+  const policy = appName ? POLICIES[appName] ?? null : null;
+
+  useEffect(() => {
+    if (!hash || !policy) return;
+    const id = hash.slice(1).trim();
+    if (!id) return;
+
+    const scrollToTarget = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    const t = setTimeout(scrollToTarget, 100);
+    return () => clearTimeout(t);
+  }, [hash, policy]);
 
   if (!policy) {
     return (
@@ -32,7 +50,6 @@ export default function AppPrivacyPage() {
   }
 
   const { title, content } = policy;
-  const { pathname } = useLocation();
   const path = pathname || `/apps/${appName}`;
 
   return (

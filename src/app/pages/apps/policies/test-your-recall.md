@@ -166,8 +166,6 @@ If you have questions about this Privacy Policy, your data, or your rights, plea
 
 ---
 
-<span id="support"></span>
-
-## Contact Us (Support)
+<h2 id="support">Contact Us (Support)</h2>
 
 For support, email apps@orange-dev.com.
