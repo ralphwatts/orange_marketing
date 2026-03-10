@@ -1,6 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router';
+import { ArrowRight } from 'lucide-react';
 import { FloatingIcons } from '../components/FloatingIcons';
 import { SEO } from '../components/SEO';
+import { serviceCards } from '../data/services';
 
 export default function Home() {
   return (
@@ -168,6 +171,45 @@ export default function Home() {
           </Link>
         </div>
       </section>*/}
+
+      {/* Services Section */}
+      <section className="relative py-20 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#1a1535] to-[#0a0a1e]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,53,0.08),transparent_60%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Explore Our Full Service Offering
+            </h2>
+            <p className="text-lg text-gray-400">
+              From custom builds to growth systems, each service is designed to help you save time,
+              simplify operations, and create more opportunities.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {serviceCards.map(({ to, label, description, icon: Icon }) => (
+              <Link
+                key={to}
+                to={to}
+                className="group h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b35] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a1e]"
+              >
+                <div className="h-full bg-[#1a1a2e] border border-white/10 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[#ff6b35]/40 hover:bg-[#20203a]">
+                  <div className="w-12 h-12 bg-[#ff6b35]/15 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-[#ff6b35]" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{label}</h3>
+                  <p className="text-gray-400 leading-relaxed mb-6">{description}</p>
+                  <div className="inline-flex items-center gap-2 text-[#ff6b35] font-semibold">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="relative py-32 px-6">

@@ -19,7 +19,9 @@ import ThankYouAudit from './pages/ThankYouAudit';
 import NotFound from './pages/NotFound';
 import FreeAudit from './pages/FreeAudit';
 import AppPrivacyPage from './pages/apps/AppPrivacyPage';
+import TestYourRecallLandingPage from './pages/apps/TestYourRecallLandingPage';
 import AITraining from './pages/AITraining';
+import { serviceLinks } from './data/services';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,18 +30,6 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
-
-const serviceLinks = [
-  { to: '/services', label: 'Overview' },
-  { to: '/services/web-development', label: 'Web Development & Design' },
-  { to: '/services/app-development', label: 'App Development' },
-  { to: '/services/ai-integration', label: 'AI Integration & Automation' },
-  { to: '/ai-training', label: 'AI Training' },
-  { to: '/services/internet-marketing', label: 'Internet Marketing' },
-  { to: '/services/analytics-growth', label: 'Analytics & Growth' },
-  { to: '/services/strategy-consulting', label: 'Strategy & Consulting' },
-  { to: '/services/lead-generation', label: 'Lead Generation' },
-];
 
 export default function App() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -75,60 +65,15 @@ export default function App() {
                   className={`absolute top-full left-0 pt-2 ${servicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200`}
                 >
                   <div className="bg-[#1a1a2e] border border-white/10 rounded-lg py-2 min-w-[220px] shadow-xl">
-                    <Link
-                      to="/services"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Overview
-                    </Link>
-                    <Link
-                      to="/services/web-development"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Web Development & Design
-                    </Link>
-                    <Link
-                      to="/services/app-development"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      App Development
-                    </Link>
-                    <Link
-                      to="/services/ai-integration"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      AI Integration & Automation
-                    </Link>
-                    <Link
-                      to="/ai-training"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      AI Training
-                    </Link>
-                    <Link
-                      to="/services/internet-marketing"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Internet Marketing
-                    </Link>
-                    <Link
-                      to="/services/analytics-growth"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Analytics & Growth
-                    </Link>
-                    <Link
-                      to="/services/strategy-consulting"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Strategy & Consulting
-                    </Link>
-                    <Link
-                      to="/services/lead-generation"
-                      className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
-                    >
-                      Lead Generation
-                    </Link>
+                    {serviceLinks.map(({ to, label }) => (
+                      <Link
+                        key={to}
+                        to={to}
+                        className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 hover:text-white transition-colors text-sm"
+                      >
+                        {label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -203,6 +148,8 @@ export default function App() {
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/thank-you-audit" element={<ThankYouAudit />} />
+            <Route path="/apps/:appName/policy" element={<AppPrivacyPage />} />
+            <Route path="/apps/test-your-recall" element={<TestYourRecallLandingPage />} />
             <Route path="/apps/:appName" element={<AppPrivacyPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

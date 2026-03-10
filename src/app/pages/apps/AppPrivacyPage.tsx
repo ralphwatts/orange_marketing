@@ -1,6 +1,7 @@
-import { Link, useParams } from 'react-router';
+import { Link, useParams, useLocation } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { SEO } from '../../components/SEO';
 
 import testYourRecallContent from './policies/test-your-recall.md?raw';
@@ -31,7 +32,8 @@ export default function AppPrivacyPage() {
   }
 
   const { title, content } = policy;
-  const path = `/apps/${appName}`;
+  const { pathname } = useLocation();
+  const path = pathname || `/apps/${appName}`;
 
   return (
     <div className="min-h-screen bg-[#0a0a1e] text-white">
@@ -45,7 +47,7 @@ export default function AppPrivacyPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,107,53,0.12),transparent_50%)]" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="[&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:font-bold [&_h1]:text-white [&_h1]:mb-6 [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:pb-2 [&_h2]:border-b [&_h2]:border-white/10 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-white [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:text-gray-300 [&_p]:leading-relaxed [&_p]:mb-4 [&_a]:text-[#ff6b35] [&_a]:no-underline hover:[&_a]:text-[#ff5520] hover:[&_a]:underline [&_ul]:text-gray-300 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:text-gray-300 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:my-1 [&_hr]:border-white/10 [&_hr]:my-8 [&_strong]:text-white">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
           </div>
         </div>
       </section>
